@@ -1,0 +1,27 @@
+<script type="importmap">
+  {
+    "imports": {
+      "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+    }
+  }
+</script>
+
+<link rel="stylesheet" href="3.css">
+
+<script type="module">
+    import { createApp, ref } from 'vue'
+
+    createApp({
+        setup() {
+            const titleClass = ref('title')
+
+            return {
+                titleClass
+            }
+        }
+    }).mount('#app')
+</script>
+
+<div id="app">
+    <h1 :class="titleClass">titleClass</h1> <!-- add dynamic class binding here -->
+</div>

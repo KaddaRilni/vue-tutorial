@@ -1,0 +1,29 @@
+<script type="importmap">
+  {
+    "imports": {
+      "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+    }
+  }
+</script>
+
+<script type="module">
+    import { createApp, ref, onMounted } from 'vue'
+
+    createApp({
+        setup() {
+            const p = ref(null)
+
+            onMounted(() => {
+                p.value.textContent = 'hello world'
+            })
+
+            return {
+                p
+            }
+        }
+    }).mount('#app')
+</script>
+
+<div id="app">
+    <p ref="p">hello</p>
+</div>

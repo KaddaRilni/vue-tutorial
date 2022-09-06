@@ -1,0 +1,29 @@
+<script type="importmap">
+  {
+    "imports": {
+      "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+    }
+  }
+</script>
+
+<script type="module">
+    import { createApp, ref } from 'vue'
+    import ChildComp from './ChildComp.js'
+
+    createApp({
+        components: {
+            ChildComp
+        },
+        setup() {
+            const greeting = ref('Hello from parent')
+
+            return {
+                greeting
+            }
+        }
+    }).mount('#app')
+</script>
+
+<div id="app">
+    <child-comp :msg="greeting"></child-comp>
+</div>

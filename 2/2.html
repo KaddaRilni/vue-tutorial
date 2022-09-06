@@ -1,0 +1,28 @@
+<script type="importmap">
+  {
+    "imports": {
+      "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+    }
+  }
+</script>
+
+<script type="module">
+    import { createApp, ref } from 'vue'
+
+    createApp({
+        setup() {
+            const message = ref('madam');
+            const obj = {a:3,b:"three"};
+
+            return {
+                message,
+                obj
+            }
+        }
+    }).mount('#app')
+</script>
+
+<div id="app">
+    <h1>{{ message.split().reverse().join() }}</h1>
+    <h1>{{ obj }}</h1>
+</div>
